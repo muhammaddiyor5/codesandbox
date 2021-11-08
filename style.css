@@ -18,6 +18,7 @@
 }
 .box {
   background: crimson;
+  border-radius: 50%;
 }
 
 /* loader style */
@@ -33,6 +34,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  transition: all 0.5s ease;
 }
 .ring {
   width: 45px;
@@ -41,4 +44,25 @@
   justify-content: center;
   border: 5px solid black;
   border-radius: 50%;
+  position: relative;
+  border-color: transparent;
+}
+
+.ring:after {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: 5px solid yellow;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
